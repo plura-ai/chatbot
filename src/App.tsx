@@ -1,33 +1,24 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import ChatBot from './components/custom';
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="bg-secondary/30 flex justify-center h-screen">
+        <div className='p-10 md:p-24 flex flex-col items-center gap-5 container mx-auto'>
+          <h1 className='text-5xl md:text-6xl font-semibold tracking-tighter drop-shadow-sm select-none'>This is how the chatbot looks like.</h1>
+          <ChatBot 
+            chatBotWrapperStyle="absolute bottom-4 right-4 md:top-58 max-h-[600px] shadow-xl"
+            chatWindowStyle="bg-black" 
+            botIcon="" 
+            userIcon= ""
+            // prompt="You are an artist" 
+            startOpen={true}
+            authToken={""}
+          /> 
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 }
